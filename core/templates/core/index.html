@@ -1,32 +1,146 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>PsyQ - Psychology Quiz App</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f2f2f2; }
-        .container { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
-        h1 { color: #333; }
-        p { color: #555; }
-        .buttons { margin-top: 20px; }
-        a.button { display: inline-block; padding: 10px 20px; margin-right: 10px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
-        a.button.signup { background: #2196F3; }
+        :root {
+            --main-bg: #f2f2f2;
+            --container-bg: #fff;
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--main-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 90%;
+            width: 50rem;
+            /* relative to root font size */
+            margin: 5vh auto;
+            padding: 2rem;
+            background: var(--container-bg);
+            border-radius: 1rem;
+            box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #555;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: -1rem;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            margin: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        a.button.signup {
+            background: var(--secondary-color);
+        }
+
+        a.button:hover {
+            opacity: 0.85;
+        }
+
+        .images {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .images img {
+            width: 25rem;
+            max-width: 40vw;
+            /* responsive */
+            border-radius: 0.5rem;
+            box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .images img {
+                width: 12rem;
+                max-width: 80vw;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Welcome to PsyQ</h1>
-        <p><strong>A psychology-based quiz app</strong> designed to explore personality, thinking patterns, and behavior through engaging and insightful questions.</p>
+        <p><strong>A psychology-based quiz app</strong> designed to explore personality, thinking patterns, and behavior
+            through engaging and insightful questions.</p>
+
         <h3>Why create an account?</h3>
         <ul>
             <li>Track your quiz results and progress.</li>
             <li>Access personalized recommendations.</li>
             <li>Participate in challenges and share with friends.</li>
         </ul>
+
         <div class="buttons">
             <a href="#" class="button login">Login</a>
             <a href="#" class="button signup">Sign Up</a>
         </div>
+
+        <div class="images">
+            <img src="{% static 'core/images/psychology1.jpeg' %}" alt="Psychology Image">
+        </div>
     </div>
 </body>
+
 </html>
