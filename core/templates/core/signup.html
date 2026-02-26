@@ -2,28 +2,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PsyQ - Sign Up</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 0; }
-        .container { max-width: 30rem; margin: 5vh auto; padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.2); }
-        h1 { text-align: center; margin-bottom: 1.5rem; }
-        form { display: flex; flex-direction: column; gap: 1rem; }
-        input { padding: 0.8rem; font-size: 1rem; border-radius: 0.5rem; border: 1px solid #ccc; }
-        button { padding: 0.8rem; font-size: 1rem; border: none; border-radius: 0.5rem; background: #4CAF50; color: white; cursor: pointer; }
-        button:hover { opacity: 0.85; }
-        a { text-decoration: none; color: #2196F3; text-align: center; margin-top: 1rem; display: block; }
-    </style>
+<meta charset="UTF-8">
+<title>PsyQ - Sign Up</title>
+<style>
+:root {
+    --main-bg: #f2f2f2;
+    --container-bg: #fff;
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--main-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 30rem;
+    background: var(--container-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { opacity: 0.85; }
+
+a.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.back-home:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container { padding: 1.5rem; }
+    h1 { font-size: 1.7rem; }
+    input, button { font-size: 0.9rem; padding: 0.7rem; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Create Account</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Sign Up</button>
-        </form>
-        <a href="{% url 'home' %}">Back to Home</a>
-    </div>
+<div class="container">
+    <h1>Create Your PsyQ Account</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+    <a href="{% url 'home' %}" class="back-home">← Back to Home</a>
+</div>
 </body>
 </html>
