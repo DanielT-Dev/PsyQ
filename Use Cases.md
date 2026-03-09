@@ -39,6 +39,14 @@
 | **Exceptions**        | **3.0.E1 Invalid registration data** <br> 1. System detects invalid or missing fields. <br> 2. System asks user to correct the information. <br><br> **3.0.E2 Email already registered** <br> 1. System informs the user that the email already exists. <br> 2. User may log in instead or use another email.                                                       |
 
 
+| Category                 | Non-Functional Requirement                                                                                      |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| **Performance**          | The system should load quizzes and questions within **2 seconds**.                                              |
+| **Server Availability**  | The server should maintain **at least 99% uptime** to ensure users can access quizzes reliably.                 |
+| **Database Reliability** | The database must store quiz responses and results **without data loss** and support backup and recovery.       |
+| **Security**             | Communication between client, server, and database must use **secure protocols (HTTPS)** and protect user data. |
+| **Scalability**          | The server and database should support **multiple concurrent users** taking quizzes at the same time.           |
+| **Maintainability**      | New quizzes and questions should be **added to the database without changing the application code**.            |
 
 
 
